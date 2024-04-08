@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addCar(newCar) {
-    fetch('api/addCar', {
+    fetch('/api/addCar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -57,11 +57,11 @@ carForm.addEventListener('submit', event => {
     addCar({ make, model, year, price });
     carForm.reset();
 });
-/*
+
 // Function to remove a car
 function removeCar(index) {
     const carId = cars[index].id;
-    fetch(`http://localhost:3001/cars/${carId}`, {
+    fetch(`/api/cars/${carId}`, {
         method: 'DELETE'
     })
         .then(response => response.json())
@@ -72,9 +72,10 @@ function removeCar(index) {
             loadCarsBtn.click();
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error('Error:', JSON.stringify(error));
         });
 }
+
 // Event delegation for remove buttons
 carList.addEventListener('click', event => {
     if (event.target.classList.contains('btn-remove')) {
@@ -82,4 +83,3 @@ carList.addEventListener('click', event => {
         removeCar(index);
     }
 });
-*/
