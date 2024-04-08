@@ -47,7 +47,7 @@ function addCar(newCar) {
             console.error('Error:', error);
         });
 }
-/*
+
 carForm.addEventListener('submit', event => {
     event.preventDefault();
     const make = document.getElementById('make').value;
@@ -57,7 +57,7 @@ carForm.addEventListener('submit', event => {
     addCar({ make, model, year, price });
     carForm.reset();
 });
-
+/*
 // Function to remove a car
 function removeCar(index) {
     const carId = cars[index].id;
