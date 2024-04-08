@@ -16,6 +16,9 @@ app.http('addCar', {
 
         data.push(newCar)
 
+        const newDataJson = JSON.stringify(data);
+        await fs.writeFile(jsonFilePath, newDataJson, 'utf8');
+
         return{
             body:JSON.stringify(data)
         }

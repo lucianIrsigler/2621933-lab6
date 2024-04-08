@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 });
-/*
+
 function addCar(newCar) {
-    fetch('http://localhost:3001/cars', {
+    fetch('api/addCar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ function addCar(newCar) {
             console.error('Error:', error);
         });
 }
-
+/*
 carForm.addEventListener('submit', event => {
     event.preventDefault();
     const make = document.getElementById('make').value;
