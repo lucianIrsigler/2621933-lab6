@@ -4,8 +4,9 @@ const { app } = require('@azure/functions');
 
 const jsonFilePath = path.resolve(__dirname, 'cars.json');
 
-
-
+/**
+ * Deletes a car from the cars array, and writes the new array to the cars.json file
+ */
 app.http('getCarById', {
     methods: ['DELETE'],
     route: 'cars/{carID}', // Define route with route parameter {carId}
@@ -22,8 +23,9 @@ app.http('getCarById', {
 
             await fs.writeFile(jsonFilePath, newDataJson, 'utf8');
 
-            return{ body: 
-                newDataJson
+            return{ 
+                status:200,
+                body: newDataJson
             };
         }catch(error){
             return{
